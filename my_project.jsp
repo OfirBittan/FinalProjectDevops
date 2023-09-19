@@ -16,8 +16,7 @@
             "Bananas are berries, but strawberries aren't.",
             "A group of flamingos is called a 'flamboyance.'",
             "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion of the iron.",
-            "Octopuses have three hearts.", 
-		"Hello check."
+            "Octopuses have three hearts."
         };
         
         // Generate a random index to select a fact
