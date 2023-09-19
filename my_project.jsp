@@ -3,49 +3,30 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>My Project - Dashboard</title>
+    <title>Random Facts</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Project</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>Did You Know?</h1>
     
-    <main>
-        <section id="dashboard">
-            <h2>Dashboard</h2>
-            
-            <div id="user-info">
-                <h3>Hello, <%= session.getAttribute("username") %>!</h3>
-                <p>Email: <%= session.getAttribute("email") %></p>
-            </div>
-            
-            <!-- Add dynamic content from your database -->
-            <div id="recent-posts">
-                <h3>Recent Posts</h3>
-                <ul>
-                    <%
-                        // Fetch recent posts from your database and display them
-                        List<String> recentPosts = YourDatabaseService.getRecentPosts();
-                        for (String post : recentPosts) {
-                    %>
-                        <li><%= post %></li>
-                    <%
-                        }
-                    %>
-                </ul>
-            </div>
-        </section>
-    </main>
+    <%
+        // Array of random facts
+        String[] facts = {
+            "Honey never spoils. Archaeologists have even found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible.",
+            "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.",
+            "Bananas are berries, but strawberries aren't.",
+            "A group of flamingos is called a 'flamboyance.'",
+            "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion of the iron.",
+            "Octopuses have three hearts."
+        };
+        
+        // Generate a random index to select a fact
+        int randomIndex = (int) (Math.random() * facts.length);
+        String randomFact = facts[randomIndex];
+    %>
     
-    <footer>
-        <p>&copy; <%= new java.util.Date().getYear() + 1900 %> My Project</p>
-    </footer>
+    <p>Here's a random fact for you:</p>
+    <blockquote><%= randomFact %></blockquote>
+    
+    <p>Refresh the page to discover another interesting fact!</p>
 </body>
 </html>
