@@ -14,7 +14,7 @@
         String username = request.getParameter("username");
         if (username != null && !username.isEmpty()) {
     %>
-            <p>Hello, <%= username %>! This is a personalized greeting from JSP. Hello Change number 2.</p>
+            <p>Hello, <%= username %>! This is a personalized greeting from JSP.</p>
     <%
         }
     %>
